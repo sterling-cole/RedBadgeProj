@@ -13,7 +13,7 @@ namespace RedBadgeProj.WebMVC.Controllers
         // GET: Event
         public ActionResult Index()
         {
-            return View();
+            return View(new EventService().GetEventList());
         }
         public ActionResult Create()
         {
