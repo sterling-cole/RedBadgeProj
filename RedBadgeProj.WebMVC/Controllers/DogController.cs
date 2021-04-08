@@ -55,7 +55,7 @@ namespace RedBadgeProj.WebMVC.Controllers
                 
         }
 
-        [HttpPut]
+        [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, DogEdit model)
         {
