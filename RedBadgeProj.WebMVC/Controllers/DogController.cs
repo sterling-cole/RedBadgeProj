@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
+using RedBadgeProj.Data;
 using RedBadgeProj.Models;
 using RedBadgeProj.Services;
 using System;
@@ -19,6 +20,14 @@ namespace RedBadgeProj.WebMVC.Controllers
         public ActionResult Create()
         {
             ViewBag.Title = "New Dog";
+            List<Event> Events = (new EventService()).GetEvents().ToList();
+            var query = from e in Events
+                        select new SelectListItem()
+                        {
+                            Value = e.EventId.ToString(),
+                            Text = e.Note
+                        };
+            ViewBag.EventId = query.ToList(); 
             return View();
         }
         [HttpPost]
@@ -44,12 +53,28 @@ namespace RedBadgeProj.WebMVC.Controllers
         public ActionResult Edit(int id)
         {
             var dog = CreateDogService().GetDogDetailsById(id);
+
+            List<Event> Events = (new EventService()).GetEvents().ToList();
+            ViewBag.EventId = Events.Select(e => new SelectListItem()
+            {
+                Value = e.EventId.ToString(),
+                Text = e.Note,
+                Selected = dog.EventId == e.EventId
+            });
+            /*var query = from e in Events
+                        select new SelectListItem()
+                        {
+                            Value = e.EventId.ToString(),
+                            Text = e.Note
+                        };
+            ViewBag.EventId = query.ToList();*/
             return View(new DogEdit
             {
                 DogId = dog.DogId,
                 DogName = dog.DogName,
                 Weight = dog.Weight,
-                Breed =  dog.Breed
+                Breed =  dog.Breed,
+                EventId = dog.EventId
 
             });
                 

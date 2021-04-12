@@ -19,7 +19,7 @@ namespace RedBadgeProj.Services
                 {
                     Note = model.Note,
                     EventType = model.EventType,
-                    CreatedUtc = model.CreatedUtc
+                    CreatedUtc = DateTimeOffset.Now
                 };
                 ctx.Events.Add(newEvent);
                 return ctx.SaveChanges() == 1;
@@ -32,7 +32,7 @@ namespace RedBadgeProj.Services
                 var Event = ctx.Events.Single(e => e.EventId == model.EventId);
                 Event.Note = model.Note;
                 Event.EventType = model.EventType;
-                Event.CreatedUtc = model.CreatedUtc;
+                Event.ModifiedUtc = DateTimeOffset.UtcNow;
                 return ctx.SaveChanges() == 1;
 
             }
@@ -54,11 +54,19 @@ namespace RedBadgeProj.Services
             {
                 var query = ctx.Events.Select(e => new EventListItem
                 {
+                    EventId = e.EventId,
                     Note = e.Note,
                     EventType = e.EventType,
                     CreatedUtc = e.CreatedUtc
                 });
                 return query.ToArray();
+            }
+        }
+        public IEnumerable<Event> GetEvents()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                return ctx.Events.ToList();
             }
         }
 

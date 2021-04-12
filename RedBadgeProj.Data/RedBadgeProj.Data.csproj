@@ -65,6 +65,14 @@
     <Compile Include="Migrations\202104071833478_Initial.Designer.cs">
       <DependentUpon>202104071833478_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104081323561_ForeignKeyStuff.cs" />
+    <Compile Include="Migrations\202104081323561_ForeignKeyStuff.Designer.cs">
+      <DependentUpon>202104081323561_ForeignKeyStuff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104121423220_EventDropDown.cs" />
+    <Compile Include="Migrations\202104121423220_EventDropDown.Designer.cs">
+      <DependentUpon>202104121423220_EventDropDown.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -78,6 +86,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104071833478_Initial.resx">
       <DependentUpon>202104071833478_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104081323561_ForeignKeyStuff.resx">
+      <DependentUpon>202104081323561_ForeignKeyStuff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104121423220_EventDropDown.resx">
+      <DependentUpon>202104121423220_EventDropDown.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -15,6 +15,9 @@
             @Html.DisplayNameFor(model => model.Note)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.EventType)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.CreatedUtc)
         </th>
         <th></th>
@@ -24,6 +27,9 @@
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Note)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EventType)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.CreatedUtc)

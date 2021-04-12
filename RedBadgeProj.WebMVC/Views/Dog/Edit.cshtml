@@ -17,7 +17,7 @@
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     @Html.HiddenFor(model => model.DogId)
 
-    
+
     <div class="form-group">
         @Html.LabelFor(model => model.DogName, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
@@ -39,6 +39,15 @@
         <div class="col-md-10">
             @Html.EditorFor(model => model.Breed, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.Breed, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.EventId, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.EventId, ViewBag.EventId as SelectList, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.EventId, "", new { @class = "text-danger" })
         </div>
     </div>
 

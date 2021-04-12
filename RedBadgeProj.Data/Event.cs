@@ -15,6 +15,7 @@ namespace RedBadgeProj.Data
         public string Note { get; set; }
         public EventType EventType { get; set; }
         public DateTimeOffset CreatedUtc { get; set; }
+        public DateTimeOffset? ModifiedUtc { get; set; }
 
     }
 }
