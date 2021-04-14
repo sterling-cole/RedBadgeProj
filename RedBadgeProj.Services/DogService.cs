@@ -15,6 +15,10 @@ namespace RedBadgeProj.Services
         {
             _userId = userId;
         }
+        public DogService()
+        {
+
+        }
         public DogDetail GetDogDetailsById(int id)
         {
             using (var ctx = new ApplicationDbContext())
@@ -26,7 +30,6 @@ namespace RedBadgeProj.Services
                     DogName = dog.DogName,
                     Weight = dog.Weight,
                     Breed = dog.Breed,
-                    EventId = dog.EventId
                 };
             }
         }
@@ -40,7 +43,6 @@ namespace RedBadgeProj.Services
                     DogName = model.DogName,
                     Weight = model.Weight,
                     Breed = model.Breed,
-                    EventId = model.EventId
                 };
                 ctx.Dogs.Add(newDog);
                 return ctx.SaveChanges() == 1;
@@ -54,9 +56,17 @@ namespace RedBadgeProj.Services
                 {
                     DogId = d.DogId,
                     DogName = d.DogName,
-                    EventId = d.EventId
                 });
                 return query.ToArray();
+            }
+        }
+
+        public IEnumerable<Dog> GetDogs()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                return ctx.Dogs.ToList();
+                
             }
         }
 
@@ -69,7 +79,6 @@ namespace RedBadgeProj.Services
                 dog.DogName = model.DogName;
                 dog.Weight = model.Weight;
                dog.Breed = model.Breed;
-                dog.EventId = model.EventId;
                 return ctx.SaveChanges() == 1;
 
             }

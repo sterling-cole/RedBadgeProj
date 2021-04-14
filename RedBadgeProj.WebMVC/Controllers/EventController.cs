@@ -1,4 +1,5 @@
-﻿using RedBadgeProj.Models.EventModels;
+﻿using RedBadgeProj.Data;
+using RedBadgeProj.Models.EventModels;
 using RedBadgeProj.Services;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,16 @@ namespace RedBadgeProj.WebMVC.Controllers
         }
         public ActionResult Create()
         {
-            ViewBag.Title = "New Event";
+
+            ViewBag.Title = "New Dog";
+            List<Dog> Dogs = new DogService().GetDogs().ToList();
+            var query = from d in Dogs
+                        select new SelectListItem()
+                        {
+                            Value = d.DogId.ToString(),
+                            Text = d.DogName
+                        };
+            ViewBag.DogId = query.ToList();
             return View();
         }
         [HttpPost]
@@ -48,7 +58,9 @@ namespace RedBadgeProj.WebMVC.Controllers
                 EventId = Event.EventId,
                 Note =  Event.Note,
                 EventType = Event.EventType,
-                CreatedUtc = Event.CreatedUtc
+                CreatedUtc = Event.CreatedUtc,
+                DogId = Event.DogId
+
 
             });
 

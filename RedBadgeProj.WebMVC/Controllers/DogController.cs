@@ -54,28 +54,13 @@ namespace RedBadgeProj.WebMVC.Controllers
         {
             var dog = CreateDogService().GetDogDetailsById(id);
 
-            List<Event> Events = (new EventService()).GetEvents().ToList();
-            ViewBag.EventId = Events.Select(e => new SelectListItem()
-            {
-                Value = e.EventId.ToString(),
-                Text = e.Note,
-                Selected = dog.EventId == e.EventId
-            });
-            /*var query = from e in Events
-                        select new SelectListItem()
-                        {
-                            Value = e.EventId.ToString(),
-                            Text = e.Note
-                        };
-            ViewBag.EventId = query.ToList();*/
+            
             return View(new DogEdit
             {
                 DogId = dog.DogId,
                 DogName = dog.DogName,
                 Weight = dog.Weight,
                 Breed =  dog.Breed,
-                EventId = dog.EventId
-
             });
                 
         }

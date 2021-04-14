@@ -17,8 +17,6 @@ namespace RedBadgeProj.Data
         public int Weight { get; set; }
         public string Breed { get; set; }
         public int OwnerId { get; set; }
-        public int EventId { get; set; }
-        [ForeignKey("EventId")]
-        public virtual Event Event { get; set; }
+        
     }
 }

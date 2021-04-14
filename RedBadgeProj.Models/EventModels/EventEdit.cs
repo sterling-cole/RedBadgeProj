@@ -13,5 +13,6 @@ namespace RedBadgeProj.Models.EventModels
         public string Note { get; set; }
         public EventType EventType { get; set; }
         public DateTimeOffset CreatedUtc { get; set; }
+        public int DogId { get; set; }
     }
 }

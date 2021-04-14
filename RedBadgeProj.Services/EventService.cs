@@ -19,7 +19,8 @@ namespace RedBadgeProj.Services
                 {
                     Note = model.Note,
                     EventType = model.EventType,
-                    CreatedUtc = DateTimeOffset.Now
+                    CreatedUtc = DateTimeOffset.Now,
+                    DogId = model.DogId
                 };
                 ctx.Events.Add(newEvent);
                 return ctx.SaveChanges() == 1;
@@ -33,6 +34,7 @@ namespace RedBadgeProj.Services
                 Event.Note = model.Note;
                 Event.EventType = model.EventType;
                 Event.ModifiedUtc = DateTimeOffset.UtcNow;
+                Event.DogId = model.DogId;
                 return ctx.SaveChanges() == 1;
 
             }
@@ -44,7 +46,11 @@ namespace RedBadgeProj.Services
                 var Event = ctx.Events.Single(e => e.EventId == id);
                 return new EventDetail
                 {
-                    
+                    EventId = Event.EventId,
+                    Note = Event.Note,
+                    EventType = Event.EventType,
+                    CreatedUtc = Event.CreatedUtc,
+                    DogId = Event.DogId
                 };
             }
         }
@@ -57,7 +63,8 @@ namespace RedBadgeProj.Services
                     EventId = e.EventId,
                     Note = e.Note,
                     EventType = e.EventType,
-                    CreatedUtc = e.CreatedUtc
+                    CreatedUtc = e.CreatedUtc,
+                    DogId = e.DogId
                 });
                 return query.ToArray();
             }

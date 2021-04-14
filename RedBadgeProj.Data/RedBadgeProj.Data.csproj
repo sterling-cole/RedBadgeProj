@@ -73,7 +73,12 @@
     <Compile Include="Migrations\202104121423220_EventDropDown.Designer.cs">
       <DependentUpon>202104121423220_EventDropDown.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104131517103_FixedForeignKeyHopefully.cs" />
+    <Compile Include="Migrations\202104131517103_FixedForeignKeyHopefully.Designer.cs">
+      <DependentUpon>202104131517103_FixedForeignKeyHopefully.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Owner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -92,6 +97,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104121423220_EventDropDown.resx">
       <DependentUpon>202104121423220_EventDropDown.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104131517103_FixedForeignKeyHopefully.resx">
+      <DependentUpon>202104131517103_FixedForeignKeyHopefully.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

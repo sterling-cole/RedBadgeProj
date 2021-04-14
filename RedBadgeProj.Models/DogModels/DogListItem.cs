@@ -11,6 +11,6 @@ namespace RedBadgeProj.Models
         public int DogId { get; set; }
         
         public string DogName { get; set; }
-        public int EventId { get; set; }
+
     }
 }

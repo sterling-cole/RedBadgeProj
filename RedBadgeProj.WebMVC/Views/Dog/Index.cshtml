@@ -17,9 +17,7 @@
         <th>
             @Html.DisplayNameFor(model => model.DogName)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.EventId)
-        </th>
+        
         <th></th>
     </tr>
 
@@ -31,9 +29,7 @@
     <td>
         @Html.DisplayFor(modelItem => item.DogName)
     </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.EventId)
-    </td>
+    
     <td>
         @Html.ActionLink("Edit", "Edit", new { id = item.DogId }) |
         @Html.ActionLink("Details", "Details", new { id = item.DogId }) |
