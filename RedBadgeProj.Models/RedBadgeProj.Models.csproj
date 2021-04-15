@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -49,6 +50,10 @@
     <Compile Include="EventModels\EventDetail.cs" />
     <Compile Include="EventModels\EventEdit.cs" />
     <Compile Include="EventModels\EventListItem.cs" />
+    <Compile Include="OwnerModels\OwnerCreate.cs" />
+    <Compile Include="OwnerModels\OwnerDetail.cs" />
+    <Compile Include="OwnerModels\OwnerEdit.cs" />
+    <Compile Include="OwnerModels\OwnerListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

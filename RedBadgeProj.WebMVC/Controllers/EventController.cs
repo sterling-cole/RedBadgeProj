@@ -1,4 +1,5 @@
-﻿using RedBadgeProj.Data;
+﻿using Microsoft.AspNet.Identity;
+using RedBadgeProj.Data;
 using RedBadgeProj.Models.EventModels;
 using RedBadgeProj.Services;
 using System;
@@ -19,7 +20,7 @@ namespace RedBadgeProj.WebMVC.Controllers
         public ActionResult Create()
         {
 
-            ViewBag.Title = "New Dog";
+            ViewBag.Title = "New Event";
             List<Dog> Dogs = new DogService().GetDogs().ToList();
             var query = from d in Dogs
                         select new SelectListItem()

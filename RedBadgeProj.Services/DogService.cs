@@ -30,6 +30,7 @@ namespace RedBadgeProj.Services
                     DogName = dog.DogName,
                     Weight = dog.Weight,
                     Breed = dog.Breed,
+                    OwnerId = dog.OwnerId
                 };
             }
         }
@@ -43,6 +44,7 @@ namespace RedBadgeProj.Services
                     DogName = model.DogName,
                     Weight = model.Weight,
                     Breed = model.Breed,
+                    OwnerId = model.OwnerId
                 };
                 ctx.Dogs.Add(newDog);
                 return ctx.SaveChanges() == 1;
@@ -56,6 +58,7 @@ namespace RedBadgeProj.Services
                 {
                     DogId = d.DogId,
                     DogName = d.DogName,
+                    OwnerId = d.OwnerId
                 });
                 return query.ToArray();
             }

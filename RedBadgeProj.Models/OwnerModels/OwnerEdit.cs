@@ -4,14 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RedBadgeProj.Models
+namespace RedBadgeProj.Models.OwnerModels
 {
-    public class DogListItem
+    public class OwnerEdit
     {
-        public int DogId { get; set; }
-        
-        public string DogName { get; set; }
         public int OwnerId { get; set; }
-
+        public string OwnerName { get; set; }
     }
 }

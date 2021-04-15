@@ -77,6 +77,10 @@
     <Compile Include="Migrations\202104131517103_FixedForeignKeyHopefully.Designer.cs">
       <DependentUpon>202104131517103_FixedForeignKeyHopefully.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104150515161_MoreForeignKeyStuff.cs" />
+    <Compile Include="Migrations\202104150515161_MoreForeignKeyStuff.Designer.cs">
+      <DependentUpon>202104150515161_MoreForeignKeyStuff.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Owner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -100,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104131517103_FixedForeignKeyHopefully.resx">
       <DependentUpon>202104131517103_FixedForeignKeyHopefully.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104150515161_MoreForeignKeyStuff.resx">
+      <DependentUpon>202104150515161_MoreForeignKeyStuff.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

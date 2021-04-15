@@ -34,6 +34,7 @@ namespace RedBadgeProj.Data
 
         public DbSet<Dog> Dogs { get; set; }
         public DbSet<Event> Events { get; set; }
+        public DbSet<Owner> Owners { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

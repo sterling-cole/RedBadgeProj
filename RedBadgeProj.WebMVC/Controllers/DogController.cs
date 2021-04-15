@@ -20,14 +20,14 @@ namespace RedBadgeProj.WebMVC.Controllers
         public ActionResult Create()
         {
             ViewBag.Title = "New Dog";
-            List<Event> Events = (new EventService()).GetEvents().ToList();
-            var query = from e in Events
+            List<Owner> Owners = (new OwnerService()).GetOwners().ToList();
+            var query = from o in Owners
                         select new SelectListItem()
                         {
-                            Value = e.EventId.ToString(),
-                            Text = e.Note
+                            Value = o.OwnerId.ToString(),
+                            Text = o.OwnerName
                         };
-            ViewBag.EventId = query.ToList(); 
+            ViewBag.OwnerId = query.ToList(); 
             return View();
         }
         [HttpPost]
@@ -53,8 +53,18 @@ namespace RedBadgeProj.WebMVC.Controllers
         public ActionResult Edit(int id)
         {
             var dog = CreateDogService().GetDogDetailsById(id);
+            ViewBag.Title = "New Dog";
+            List<Owner> Owners = (new OwnerService()).GetOwners().ToList();
+            var query = from o in Owners
+                        select new SelectListItem()
+                        {
+                            Value = o.OwnerId.ToString(),
+                            Text = o.OwnerName,
+                            Selected = dog.OwnerId == o.OwnerId
+                        };
+            ViewBag.OwnerId = query.ToList();
 
-            
+
             return View(new DogEdit
             {
                 DogId = dog.DogId,

@@ -76,6 +76,15 @@ namespace RedBadgeProj.Services
                 return ctx.Events.ToList();
             }
         }
+        public bool DeleteEvent(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var Event = ctx.Events.Single(e => e.EventId == id);
+                ctx.Events.Remove(Event);
+                return ctx.SaveChanges() == 1;
+            }
+        }
 
     }
 }
