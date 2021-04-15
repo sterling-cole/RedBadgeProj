@@ -1,4 +1,5 @@
 # RedBadgeProj aka Dog Daze
+### https://dogdaze.azurewebsites.net/
 ## Description
  Dog Daze is a MVC Web App that allows it's users to better track and train dogs. Trainers and normal owners will have a way to monitor their dog's behavior so that they can make adjustments for the dogs day-today.
  ## Usage 
@@ -13,3 +14,4 @@
 * [*Trello Board*](https://trello.com/b/F3P1mQ0b/red-badge)
  ## Author 
  * [*Sterling Cole*](https://www.linkedin.com/in/sterling-cole-087381207/)
+ 
