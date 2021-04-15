@@ -16,6 +16,7 @@ namespace RedBadgeProj.Data
         public string DogName { get; set; }
         public int Weight { get; set; }
         public string Breed { get; set; }
+        [Display ( Name= "Owner's Name")]
         public int OwnerId { get; set; }
         [ForeignKey("OwnerId")]
         public virtual Owner Owner { get; set; }

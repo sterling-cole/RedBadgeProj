@@ -15,6 +15,7 @@ namespace RedBadgeProj.Models
         public int Weight { get; set; }
         [Required]
         public string Breed { get; set; }
+        [Display(Name = "Owner's Id")]
         public int OwnerId { get; set; }
     }
 }
